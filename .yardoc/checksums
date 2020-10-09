@@ -1,0 +1,7 @@
+lib/database.rb 103ea3042be1582568a88bee5ef2f160e41115d2
+lib/persists/point.rb 81e7bf0777498260f2e9466f4abb77fc8f936aea
+lib/errors/params_error.rb 0597ad657d6941e168bd3b7243f268433198c1b9
+lib/helpers/rgeo_decoder.rb a4e71133eb3a60a88089f98dab32571f6a61d709
+lib/helpers/rack_response.rb dc0ae04ff8c981b50b6e6a607b79db3dcb2cd2a2
+lib/controllers/gps_controller.rb 740f21f62d1b0d82742499b03c93eb0580704ebf
+gps_collector.rb 0f11a8bd2013debbd5b778075e5e089970eb88db
