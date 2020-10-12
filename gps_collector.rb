@@ -2,14 +2,17 @@
 
 # Loading dependencies
 require 'byebug'
-require 'dotenv/load'
+require 'dotenv'
 require 'json'
 require 'pg'
-require 'rgeo/geo_json'
 require 'sequel'
+require 'logger'
 
 # Loading GpsCollector files
 require_relative 'lib/database'
+
+Dotenv.load
+
 Dir['lib/**/*.rb'].each { |file| require_relative file }
 
 # Handle agregation of GPS points and find points within a geometry
@@ -24,7 +27,7 @@ class GpsCollector
   # Initialize the APP
   #
   # @param logger [Logger]
-  def initialize(logger = ::Logger.new(STDOUT))
+  def initialize(logger = ::Logger.new($stdout))
     @logger = logger
   end
 

@@ -38,3 +38,14 @@ namespace 'linter' do
   desc 'Run Linter'
   task run: 'linter:rubocop'
 end
+
+namespace 'specs' do
+  require 'rspec/core/rake_task'
+  RSpec::Core::RakeTask.new(:spec)
+
+  desc 'Run all tasks'
+  task all: 'specs:spec'
+end
+
+desc 'Linter, Specs, Documentation'
+task validate: ['linter:run', 'specs:all', 'doc:create']

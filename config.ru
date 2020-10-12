@@ -1,10 +1,7 @@
 # frozen_string_literal: true
 
 require 'logger'
-logger = ::Logger.new(STDOUT)
-
-# use Rack::CommonLogger, logger
-# use Rack::Lint
+logger = ::Logger.new($stdout)
 
 require_relative 'gps_collector'
 run GpsCollector.new(logger)

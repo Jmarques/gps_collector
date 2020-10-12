@@ -13,7 +13,7 @@ module Helper
     def self.respond_with(http_code, message: nil)
       message ||=
         case http_code
-        when 200 then :ok
+        when 200 then { success: :ok }
         when 404 then { error: 'Endpoint not supported' }
         when 500 then { error: 'Something went wrong, we are trying to fix the problem!' }
         end

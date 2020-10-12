@@ -1,0 +1,17 @@
+example_id                                           | status | run_time        |
+---------------------------------------------------- | ------ | --------------- |
+./spec/controllers/gps_controller_spec.rb[1:1:1:1:1] | passed | 0.01411 seconds |
+./spec/controllers/gps_controller_spec.rb[1:1:1:1:2] | passed | 0.01253 seconds |
+./spec/controllers/gps_controller_spec.rb[1:1:2:1:1] | passed | 0.09032 seconds |
+./spec/controllers/gps_controller_spec.rb[1:1:2:1:2] | passed | 0.0136 seconds  |
+./spec/controllers/gps_controller_spec.rb[1:1:3:1:1] | passed | 0.0135 seconds  |
+./spec/controllers/gps_controller_spec.rb[1:1:3:1:2] | passed | 0.01674 seconds |
+./spec/controllers/gps_controller_spec.rb[1:1:4:1:1] | passed | 0.01438 seconds |
+./spec/controllers/gps_controller_spec.rb[1:1:4:1:2] | passed | 0.0176 seconds  |
+./spec/controllers/gps_controller_spec.rb[1:1:5:1:1] | passed | 0.01546 seconds |
+./spec/controllers/gps_controller_spec.rb[1:1:5:1:2] | passed | 0.01676 seconds |
+./spec/helpers/rack_response_spec.rb[1:1:1:1]        | passed | 0.00651 seconds |
+./spec/helpers/rack_response_spec.rb[1:1:2:1]        | passed | 0.00034 seconds |
+./spec/helpers/rack_response_spec.rb[1:1:3:1]        | passed | 0.0003 seconds  |
+./spec/helpers/rgeo_decoder_spec.rb[1:1:1:1]         | passed | 0.00048 seconds |
+./spec/helpers/rgeo_decoder_spec.rb[1:1:2:1]         | passed | 0.00147 seconds |

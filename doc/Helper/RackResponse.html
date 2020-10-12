@@ -326,7 +326,7 @@
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_respond_with'>respond_with</span><span class='lparen'>(</span><span class='id identifier rubyid_http_code'>http_code</span><span class='comma'>,</span> <span class='label'>message:</span> <span class='kw'>nil</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_message'>message</span> <span class='op'>||=</span>
     <span class='kw'>case</span> <span class='id identifier rubyid_http_code'>http_code</span>
-    <span class='kw'>when</span> <span class='int'>200</span> <span class='kw'>then</span> <span class='symbol'>:ok</span>
+    <span class='kw'>when</span> <span class='int'>200</span> <span class='kw'>then</span> <span class='lbrace'>{</span> <span class='label'>success:</span> <span class='symbol'>:ok</span> <span class='rbrace'>}</span>
     <span class='kw'>when</span> <span class='int'>404</span> <span class='kw'>then</span> <span class='lbrace'>{</span> <span class='label'>error:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Endpoint not supported</span><span class='tstring_end'>&#39;</span></span> <span class='rbrace'>}</span>
     <span class='kw'>when</span> <span class='int'>500</span> <span class='kw'>then</span> <span class='lbrace'>{</span> <span class='label'>error:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Something went wrong, we are trying to fix the problem!</span><span class='tstring_end'>&#39;</span></span> <span class='rbrace'>}</span>
     <span class='kw'>end</span>
@@ -343,7 +343,7 @@
 </div>
 
       <div id="footer">
-  Generated on Fri Oct  9 16:33:56 2020 by
+  Generated on Mon Oct 12 17:18:41 2020 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.25 (ruby-2.6.6).
 </div>

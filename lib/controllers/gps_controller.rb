@@ -23,52 +23,54 @@ module Controller
     # The parameter must be an array of GeoJson Point or GeoJson GeometryCollection
     # Parameters are JSON
     #
-    # Example of parameters for a single Point
-    # [{
-    #   type: 'Point',
-    #   coordinates: [100.0, 0.0]
-    # }]
+    # @example Parameters for a single Point
+    #   [{
+    #     type: 'Point',
+    #     coordinates: [100.0, 0.0]
+    #   }]
     #
-    # Example of parameters for a single GeometryCollection
-    # [{
-    #   type: 'GeometryCollection',
-    #   geometries: [
-    #     {
+    # @example Parameters for a single GeometryCollection
+    #   [{
+    #     type: 'GeometryCollection',
+    #     geometries: [
+    #       {
+    #          'type': 'Point',
+    #          'coordinates': [100.0, 0.0]
+    #       }, {
     #        'type': 'Point',
-    #        'coordinates': [100.0, 0.0]
-    #     }, {
-    #      'type': 'Point',
-    #      'coordinates': [0.0, 100.0]
-    #     }
-    #   ]
-    # }]
+    #        'coordinates': [0.0, 100.0]
+    #       }
+    #     ]
+    #   }]
     #
-    # Example for a parameters with a combination of Point and GeometryCollection
-    # [{
-    #   type: 'Point',
-    #   coordinates: [100.0, 0.0]
-    # },{
-    #   type: 'GeometryCollection',
-    #   geometries: [
-    #     {
-    #        'type': 'Point',
-    #        'coordinates': [200.0, 0.0]
-    #     }, {
-    #      'type': 'Point',
-    #      'coordinates': [0.0, 100.0]
-    #     }
-    #   ]
-    # }]
+    # @example Parameters with a combination of Point and GeometryCollection
+    #  [{
+    #    type: 'Point',
+    #    coordinates: [100.0, 0.0]
+    #  },{
+    #    type: 'GeometryCollection',
+    #    geometries: [
+    #      {
+    #         'type': 'Point',
+    #         'coordinates': [200.0, 0.0]
+    #      }, {
+    #       'type': 'Point',
+    #       'coordinates': [0.0, 100.0]
+    #      }
+    #    ]
+    #  }]
     #
     # @return [Array<Integer, Hash, String>] Status, Header, Body
     def create
       in_request do
         points = points_from_create_params(params)
         points.each do |point|
+          # We are assuming that it's totally possible to have multiple points
+          # with the same coordinates
           Persist::Point.new(point).create
         end
 
-        Helper::RackResponse.respond_with(201, message: "#{points.size} point(s) created")
+        Helper::RackResponse.respond_with(201, message: { success: "#{points.size} point(s) created" })
       end
     end
 
@@ -126,12 +128,12 @@ module Controller
     # the last line of the given block must be a rack response
     #
     # @return [Array<Integer, Hash, String>] Status, Header, Body
-    def in_request
-      db.transaction do
-        yield
-      end
+    def in_request(&block)
+      db.transaction { block.call }
     rescue Error::ParamsError => e
-      Helper::RackResponse.respond_with(422, message: e.message)
+      Helper::RackResponse.respond_with(422, message: { error: e.message })
+    rescue JSON::ParserError => _e
+      Helper::RackResponse.respond_with(422, message: { error: 'Parameters not formated properly' })
     end
 
     # Extract the parameters from the Rack::Request
