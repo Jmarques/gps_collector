@@ -10,6 +10,7 @@ namespace 'db' do
     Database.db.create_table(:points) do
       primary_key(:id)
       column(:coordinates, 'geography(POINT, 4326)')
+      index :coordinates, type: :gist
     end
   end
 

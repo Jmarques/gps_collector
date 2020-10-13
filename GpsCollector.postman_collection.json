@@ -1,0 +1,217 @@
+{
+	"info": {
+		"_postman_id": "e144fbad-c764-0b79-e2d6-42535dd9493b",
+		"name": "GpsCollector",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET - [Point, Radius]",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Http-Method-Override",
+						"value": "GET",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \n    \"geometry\": \n        {\n            \"type\": \"Point\",\n            \"coordinates\": [2.0, 2.0]\n        },\n    \"radius\": {\n        \"length\": 20000000,\n        \"unit\": \"meter\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9292/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9292",
+					"path": [
+						""
+					],
+					"query": [
+						{
+							"key": "geometry",
+							"value": "Point",
+							"disabled": true
+						},
+						{
+							"key": "radius",
+							"value": "%7B%3Alength%3D%3E2000%7D",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST - [Point GeometryCollection]",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n\t{\n\t\t\"type\": \"Point\",\n\t\t\"coordinates\": [1.0, 1.0]\n\t},\n\t{\n\t\t\"type\": \"Point\",\n\t\t\"coordinates\": [-1.0, -1.0]\n\t},\n    {\n        \"type\": \"GeometryCollection\",\n        \"geometries\": [\n            {\n                \"type\": \"Point\",\n                \"coordinates\": [1.0, -1.0]\n            }\n        ]\n    }\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9292/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9292",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST - [Point, MultiPoint]",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3d2149d3-a929-4a36-9009-433c1dc4a452",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(422);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    {\n        \"type\": \"Point\",\n        \"coordinates\": [\n            1.0,\n            0.0\n        ]\n    },\n    {\n        \"type\": \"Point\",\n        \"coordinates\": [\n            0.0,\n            1.0\n        ]\n    },\n    {\n        \"type\": \"GeometryCollection\",\n        \"geometries\": [\n            {\n                \"type\": \"Point\",\n                \"coordinates\": [\n                    2.0,\n                    0.0\n                ]\n            },\n            {\n                \"type\": \"MultiPoints\",\n                \"coordinates\": [[\n                    1.2,\n                    0.0\n                ], [\n                    1.3,\n                    0.0\n                ]]\n            }\n        ]\n    }\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9292/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9292",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST - [Point] - Malformed",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "41534767-bbc0-41ab-b87a-03990b65f83c",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(422);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n\t{\n\t\t\"type\": \"Point\",\n\t\t\"coordinates\": [1.0, 0.0]\n\t},\n\t{\n\t\t\"type\": \"Point\",\n\t\t\"coordinate\": [0.0, 1.0]\n\t}\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9292/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9292",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - [Polygon]",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Http-Method-Override",
+						"value": "GET",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \n    \"geometry\": \n        {\n            \"type\": \"Polygon\",\n            \"coordinates\": [\n                [2.0, 2.0],\n                [2.0, -2.0],\n                [-2.0, -2.0],\n                [-2.0, 2.0],\n                [2.0, 2.0]\n            ]\n        }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9292/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9292",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

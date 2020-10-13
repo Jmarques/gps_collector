@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Class: Repository::PointRepository
+  
+    &mdash; Documentation by YARD 0.9.25
+  
+</title>
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css" />
+
+  <link rel="stylesheet" href="../css/common.css" type="text/css" />
+
+<script type="text/javascript">
+  pathId = "Repository::PointRepository";
+  relpath = '../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../_index.html">Index (P)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../Repository.html" title="Repository (module)">Repository</a></span></span>
+     &raquo; 
+    <span class="title">PointRepository</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Class: Repository::PointRepository
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+  <dl>
+    <dt>Inherits:</dt>
+    <dd>
+      <span class="inheritName">Object</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">Repository::PointRepository</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+    </dd>
+  </dl>
+  
+
+  
+  
+  <dl>
+      <dt>Extended by:</dt>
+      <dd><span class='object_link'><a href="../Database.html" title="Database (module)">Database</a></span></dd>
+  </dl>
+  
+  
+  
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>lib/repositories/point_repository.rb</dd>
+  </dl>
+  
+</div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>Repository for points Manage the Postgresql and PostGis SQL call to return datasets</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+
+
+
+
+
+
+  
+    <h2>
+      Class Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#within_polygon-class_method" title="within_polygon (class method)">.<strong>within_polygon</strong>(coordinates)  &#x21d2; Sequel::Postgres::DataSet </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Find the point within a polygon.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#within_radius-class_method" title="within_radius (class method)">.<strong>within_radius</strong>(latitude:, longitude:, radius: 1000)  &#x21d2; Sequel::Postgres::DataSet </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Find the point within a specified distance of given coordinates.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="../Database.html" title="Database (module)">Database</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="../Database.html#db-class_method" title="Database.db (method)">db</a></span></p>
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="within_polygon-class_method">
+  
+    .<strong>within_polygon</strong>(coordinates)  &#x21d2; <tt>Sequel::Postgres::DataSet</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Find the point within a polygon</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>coordinates</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p><a href="Float">Array<</a>&gt;</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Sequel::Postgres::DataSet</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/repositories/point_repository.rb', line 33</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_within_polygon'>within_polygon</span><span class='lparen'>(</span><span class='id identifier rubyid_coordinates'>coordinates</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_coordinate_sql'>coordinate_sql</span> <span class='op'>=</span>
+    <span class='id identifier rubyid_coordinates'>coordinates</span>
+    <span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_coordinate'>coordinate</span><span class='op'>|</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_coordinate'>coordinate</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_f'>to_f</span><span class='embexpr_end'>}</span><span class='tstring_content'> </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_coordinate'>coordinate</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_f'>to_f</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span> <span class='rbrace'>}</span>
+    <span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>, </span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+
+  <span class='id identifier rubyid_polygon_sql'>polygon_sql</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ST_GeomFromText(&#39;POLYGON((</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_coordinate_sql'>coordinate_sql</span><span class='embexpr_end'>}</span><span class='tstring_content'>))&#39;, 4326)</span><span class='tstring_end'>&quot;</span></span>
+
+  <span class='id identifier rubyid_db'>db</span><span class='lbracket'>[</span><span class='heredoc_beg'>&lt;&lt;~SQL</span><span class='rbracket'>]</span>
+<span class='tstring_content'>    SELECT
+</span><span class='tstring_content'>        points.*
+</span><span class='tstring_content'>      , ST_X(points.coordinates::geometry) AS longitude
+</span><span class='tstring_content'>      , ST_Y(points.coordinates::geometry) AS latitude
+</span><span class='tstring_content'>    FROM points
+</span><span class='tstring_content'>    WHERE ST_Within(points.coordinates::geometry, </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_polygon_sql'>polygon_sql</span><span class='embexpr_end'>}</span><span class='tstring_content'>)
+</span><span class='heredoc_end'>  SQL
+</span><span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="within_radius-class_method">
+  
+    .<strong>within_radius</strong>(latitude:, longitude:, radius: 1000)  &#x21d2; <tt>Sequel::Postgres::DataSet</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Find the point within a specified distance of given coordinates</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>latitude</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>longitude</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>radius</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>1000</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>radius in meters</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Sequel::Postgres::DataSet</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/repositories/point_repository.rb', line 17</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_within_radius'>within_radius</span><span class='lparen'>(</span><span class='label'>latitude:</span><span class='comma'>,</span> <span class='label'>longitude:</span><span class='comma'>,</span> <span class='label'>radius:</span> <span class='int'>1000</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_db'>db</span><span class='lbracket'>[</span><span class='heredoc_beg'>&lt;&lt;~SQL</span><span class='rbracket'>]</span>
+<span class='tstring_content'>    SELECT
+</span><span class='tstring_content'>        points.*
+</span><span class='tstring_content'>      , ST_X(points.coordinates::geometry) AS longitude
+</span><span class='tstring_content'>      , ST_Y(points.coordinates::geometry) AS latitude
+</span><span class='tstring_content'>    FROM points
+</span><span class='tstring_content'>    WHERE ST_DWithin(points.coordinates, ST_MakePoint(</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_longitude'>longitude</span><span class='embexpr_end'>}</span><span class='tstring_content'>,</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_latitude'>latitude</span><span class='embexpr_end'>}</span><span class='tstring_content'>)::geography, </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_radius'>radius</span><span class='embexpr_end'>}</span><span class='tstring_content'>)
+</span><span class='heredoc_end'>  SQL
+</span><span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Tue Oct 13 16:47:37 2020 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.25 (ruby-2.6.6).
+</div>
+
+    </div>
+  </body>
+</html>

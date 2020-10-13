@@ -3,8 +3,8 @@
 require 'spec_helper'
 
 RSpec.describe Helper::RGeoDecoder do
-  describe '.decode_point' do
-    subject { described_class.decode_point(attributes) }
+  describe '.to_sql' do
+    subject { described_class.to_sql(attributes) }
     let(:attributes) {}
 
     context 'providing valides attributes' do

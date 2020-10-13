@@ -89,7 +89,7 @@
   
   <dl>
       <dt>Includes:</dt>
-      <dd><span class='object_link'><a href="../Database.html" title="Database (module)">Database</a></span></dd>
+      <dd><span class='object_link'><a href="GpsControllerCreate.html" title="Controller::GpsControllerCreate (module)">GpsControllerCreate</a></span>, <span class='object_link'><a href="GpsControllerIndex.html" title="Controller::GpsControllerIndex (module)">GpsControllerIndex</a></span>, <span class='object_link'><a href="../Database.html" title="Database (module)">Database</a></span></dd>
   </dl>
   
   
@@ -119,6 +119,12 @@
 
 </div>
 
+
+  <h2>Constant Summary</h2>
+  
+  <h3 class="inherited">Constants included
+     from <span class='object_link'><a href="GpsControllerIndex.html" title="Controller::GpsControllerIndex (module)">GpsControllerIndex</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="GpsControllerIndex.html#FOOT_TO_METER-constant" title="Controller::GpsControllerIndex::FOOT_TO_METER (constant)">Controller::GpsControllerIndex::FOOT_TO_METER</a></span>, <span class='object_link'><a href="GpsControllerIndex.html#SUPPORTED_UNIT-constant" title="Controller::GpsControllerIndex::SUPPORTED_UNIT (constant)">Controller::GpsControllerIndex::SUPPORTED_UNIT</a></span></p>
 
 
   <h2>Instance Attribute Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
@@ -169,54 +175,6 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#create-instance_method" title="#create (instance method)">#<strong>create</strong>  &#x21d2; Array&lt;Integer, Hash, String&gt; </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'>
-<p>Register new points into the database.</p>
-</div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#index-instance_method" title="#index (instance method)">#<strong>index</strong>  &#x21d2; Array&lt;Integer, Hash, String&gt; </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'>
-<p>Status, Header, Body.</p>
-</div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
       <a href="#initialize-instance_method" title="#initialize (instance method)">#<strong>initialize</strong>(request)  &#x21d2; GpsController </a>
     
 
@@ -243,6 +201,28 @@
     </ul>
   
 
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="GpsControllerIndex.html" title="Controller::GpsControllerIndex (module)">GpsControllerIndex</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="GpsControllerIndex.html#index-instance_method" title="Controller::GpsControllerIndex#index (method)">#index</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="GpsControllerCreate.html" title="Controller::GpsControllerCreate (module)">GpsControllerCreate</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="GpsControllerCreate.html#create-instance_method" title="Controller::GpsControllerCreate#create (method)">#create</a></span></p>
 
   
   
@@ -303,12 +283,12 @@
       <pre class="lines">
 
 
-18
-19
-20</pre>
+23
+24
+25</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/controllers/gps_controller.rb', line 18</span>
+      <pre class="code"><span class="info file"># File 'lib/controllers/gps_controller.rb', line 23</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_request'>request</span><span class='rparen'>)</span>
   <span class='ivar'>@request</span> <span class='op'>=</span> <span class='id identifier rubyid_request'>request</span>
@@ -351,12 +331,12 @@
       <pre class="lines">
 
 
-13
-14
-15</pre>
+18
+19
+20</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/controllers/gps_controller.rb', line 13</span>
+      <pre class="code"><span class="info file"># File 'lib/controllers/gps_controller.rb', line 18</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_request'>request</span>
   <span class='ivar'>@request</span>
@@ -369,206 +349,10 @@
   </div>
 
 
-  <div id="instance_method_details" class="method_details_list">
-    <h2>Instance Method Details</h2>
-
-    
-      <div class="method_details first">
-  <h3 class="signature first" id="create-instance_method">
-  
-    #<strong>create</strong>  &#x21d2; <tt>Array&lt;Integer, Hash, String&gt;</tt> 
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    
-<p>Register new points into the database. The parameter must be an array of GeoJson Point or GeoJson GeometryCollection Parameters are JSON</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-  <div class="examples">
-    <p class="tag_title">Examples:</p>
-    
-      
-        <p class="example_title"><div class='inline'>
-<p>Parameters for a single Point</p>
-</div></p>
-      
-      <pre class="example code"><code><span class='lbracket'>[</span><span class='lbrace'>{</span>
-  <span class='label'>type:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Point</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
-  <span class='label'>coordinates:</span> <span class='lbracket'>[</span><span class='float'>100.0</span><span class='comma'>,</span> <span class='float'>0.0</span><span class='rbracket'>]</span>
-<span class='rbrace'>}</span><span class='rbracket'>]</span></code></pre>
-    
-      
-        <p class="example_title"><div class='inline'>
-<p>Parameters for a single GeometryCollection</p>
-</div></p>
-      
-      <pre class="example code"><code><span class='lbracket'>[</span><span class='lbrace'>{</span>
-  <span class='label'>type:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>GeometryCollection</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
-  <span class='label'>geometries:</span> <span class='lbracket'>[</span>
-    <span class='lbrace'>{</span>
-       <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>type</span><span class='label_end'>&#39;:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Point</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
-       <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>coordinates</span><span class='label_end'>&#39;:</span> <span class='lbracket'>[</span><span class='float'>100.0</span><span class='comma'>,</span> <span class='float'>0.0</span><span class='rbracket'>]</span>
-    <span class='rbrace'>}</span><span class='comma'>,</span> <span class='lbrace'>{</span>
-     <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>type</span><span class='label_end'>&#39;:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Point</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
-     <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>coordinates</span><span class='label_end'>&#39;:</span> <span class='lbracket'>[</span><span class='float'>0.0</span><span class='comma'>,</span> <span class='float'>100.0</span><span class='rbracket'>]</span>
-    <span class='rbrace'>}</span>
-  <span class='rbracket'>]</span>
-<span class='rbrace'>}</span><span class='rbracket'>]</span></code></pre>
-    
-      
-        <p class="example_title"><div class='inline'>
-<p>Parameters with a combination of Point and GeometryCollection</p>
-</div></p>
-      
-      <pre class="example code"><code><span class='lbracket'>[</span><span class='lbrace'>{</span>
-  <span class='label'>type:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Point</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
-  <span class='label'>coordinates:</span> <span class='lbracket'>[</span><span class='float'>100.0</span><span class='comma'>,</span> <span class='float'>0.0</span><span class='rbracket'>]</span>
-<span class='rbrace'>}</span><span class='comma'>,</span><span class='lbrace'>{</span>
-  <span class='label'>type:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>GeometryCollection</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
-  <span class='label'>geometries:</span> <span class='lbracket'>[</span>
-    <span class='lbrace'>{</span>
-       <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>type</span><span class='label_end'>&#39;:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Point</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
-       <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>coordinates</span><span class='label_end'>&#39;:</span> <span class='lbracket'>[</span><span class='float'>200.0</span><span class='comma'>,</span> <span class='float'>0.0</span><span class='rbracket'>]</span>
-    <span class='rbrace'>}</span><span class='comma'>,</span> <span class='lbrace'>{</span>
-     <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>type</span><span class='label_end'>&#39;:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Point</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
-     <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>coordinates</span><span class='label_end'>&#39;:</span> <span class='lbracket'>[</span><span class='float'>0.0</span><span class='comma'>,</span> <span class='float'>100.0</span><span class='rbracket'>]</span>
-    <span class='rbrace'>}</span>
-  <span class='rbracket'>]</span>
-<span class='rbrace'>}</span><span class='rbracket'>]</span></code></pre>
-    
-  </div>
-
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>Array&lt;Integer, Hash, String&gt;</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>Status, Header, Body</p>
-</div>
-      
-    </li>
-  
-</ul>
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-64
-65
-66
-67
-68
-69
-70
-71
-72
-73
-74
-75</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/controllers/gps_controller.rb', line 64</span>
-
-<span class='kw'>def</span> <span class='id identifier rubyid_create'>create</span>
-  <span class='id identifier rubyid_in_request'>in_request</span> <span class='kw'>do</span>
-    <span class='id identifier rubyid_points'>points</span> <span class='op'>=</span> <span class='id identifier rubyid_points_from_create_params'>points_from_create_params</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span>
-    <span class='id identifier rubyid_points'>points</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_point'>point</span><span class='op'>|</span>
-      <span class='comment'># We are assuming that it&#39;s totally possible to have multiple points
-</span>      <span class='comment'># with the same coordinates
-</span>      <span class='const'><span class='object_link'><a href="../Persist.html" title="Persist (module)">Persist</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Persist/Point.html" title="Persist::Point (class)">Point</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Persist/Point.html#initialize-instance_method" title="Persist::Point#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_point'>point</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_create'><span class='object_link'><a href="../Persist/Point.html#create-instance_method" title="Persist::Point#create (method)">create</a></span></span>
-    <span class='kw'>end</span>
-
-    <span class='const'><span class='object_link'><a href="../Helper.html" title="Helper (module)">Helper</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Helper/RackResponse.html" title="Helper::RackResponse (module)">RackResponse</a></span></span><span class='period'>.</span><span class='id identifier rubyid_respond_with'><span class='object_link'><a href="../Helper/RackResponse.html#respond_with-class_method" title="Helper::RackResponse.respond_with (method)">respond_with</a></span></span><span class='lparen'>(</span><span class='int'>201</span><span class='comma'>,</span> <span class='label'>message:</span> <span class='lbrace'>{</span> <span class='label'>success:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_points'>points</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span><span class='embexpr_end'>}</span><span class='tstring_content'> point(s) created</span><span class='tstring_end'>&quot;</span></span> <span class='rbrace'>}</span><span class='rparen'>)</span>
-  <span class='kw'>end</span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="index-instance_method">
-  
-    #<strong>index</strong>  &#x21d2; <tt>Array&lt;Integer, Hash, String&gt;</tt> 
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    
-<p>Returns Status, Header, Body.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>Array&lt;Integer, Hash, String&gt;</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>Status, Header, Body</p>
-</div>
-      
-    </li>
-  
-</ul>
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-78
-79
-80</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/controllers/gps_controller.rb', line 78</span>
-
-<span class='kw'>def</span> <span class='id identifier rubyid_index'>index</span>
-  <span class='const'><span class='object_link'><a href="../Helper.html" title="Helper (module)">Helper</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Helper/RackResponse.html" title="Helper::RackResponse (module)">RackResponse</a></span></span><span class='period'>.</span><span class='id identifier rubyid_respond_with'><span class='object_link'><a href="../Helper/RackResponse.html#respond_with-class_method" title="Helper::RackResponse.respond_with (method)">respond_with</a></span></span><span class='lparen'>(</span><span class='int'>200</span><span class='rparen'>)</span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-  </div>
-
 </div>
 
       <div id="footer">
-  Generated on Mon Oct 12 17:18:41 2020 by
+  Generated on Tue Oct 13 16:47:37 2020 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.25 (ruby-2.6.6).
 </div>

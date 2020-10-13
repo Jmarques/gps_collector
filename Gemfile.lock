@@ -34,6 +34,7 @@ GEM
     erubi (1.9.0)
     ffi (1.13.1)
     formatador (0.2.5)
+    georuby (2.5.2)
     guard (2.16.2)
       formatador (>= 0.2.4)
       listen (>= 2.7, < 4.0)
@@ -121,6 +122,9 @@ GEM
       parser (>= 2.7.1.4)
     ruby-progressbar (1.10.1)
     sequel (5.35.0)
+    sequel-postgis-georuby (0.2.0)
+      georuby (~> 2.5.2)
+      sequel (~> 5.0)
     shellany (0.0.1)
     thor (1.0.1)
     thread_safe (0.3.6)
@@ -145,6 +149,7 @@ DEPENDENCIES
   rspec
   rubocop
   sequel
+  sequel-postgis-georuby
   yard
 
 BUNDLED WITH
