@@ -8,11 +8,9 @@ require 'pg'
 require 'sequel'
 require 'logger'
 
-# Loading GpsCollector files
-require_relative 'lib/database'
-
 Dotenv.load
-
+# Loading database first
+require_relative 'lib/database'
 Dir['lib/**/*.rb'].each { |file| require_relative file }
 
 # Handle agregation of GPS points and find points within a geometry
